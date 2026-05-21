@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no, viewport-fit=cover">
+  <title>🔥 VAULT 40 | 10 Exclusive Tiers</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at 20% 10%, #1a1030, #03010a);
+      font-family: 'Inter', system-ui, sans-serif;
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main-container {
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+    }
+
+    .content-area {
+      flex: 3;
+      min-width: 280px;
+    }
+
+    /* desktop sidebar (10 triggers in 2 rows of 5) */
+    .level-sidebar {
+      flex: 0.9;
+      min-width: 210px;
+      position: sticky;
+      top: 1.5rem;
+      align-self: flex-start;
+      background: rgba(12, 15, 28, 0.8);
+      backdrop-filter: blur(18px);
+      border-radius: 2rem;
+      padding: 1.5rem 0.9rem;
+      border: 1px solid rgba(251, 146, 60, 0.55);
+      height: fit-content;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+    }
+
+    .level-sidebar h3 {
+      color: #ffd6a5;
+      font-size: 1.1rem;
+      text-align: center;
+      margin-bottom: 1.3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .level-sidebar h3 i {
+      color: #fb923c;
+    }
+
+    .triggers-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+    }
+
+    .level-btn {
+      background: linear-gradient(105deg, #181b30, #0e1124);
+      border: 1px solid #fb923c;
+      border-radius: 50px;
+      padding: 8px 2px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.7rem;
+      color: #ffdead;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      white-space: nowrap;
+    }
+
+    .level-btn i {
+      font-size: 0.7rem;
+      color: #fb923c;
+    }
+
+    .level-btn:hover {
+      background: linear-gradient(105deg, #2a2f48, #1a1f38);
+      border-color: #f97316;
+      transform: translateY(-2px);
+    }
+
+    .level-btn.active {
+      background: linear-gradient(105deg, #ea580c, #c2410c);
+      border-color: #fdba74;
+      color: white;
+      box-shadow: 0 0 15px #f97316;
+    }
+
+    .level-btn.active i {
+      color: #fff0e0;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #fb923c, #f97316, #fdba74);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      letter-spacing: -0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero h1 i {
+      background: none;
+      -webkit-text-fill-color: #fb923c;
+      font-size: 2rem;
+    }
+
+    .stats-card {
+      background: rgba(8, 12, 26, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 0.9rem 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 1.5rem 0 0.8rem;
+      border: 1px solid rgba(249, 115, 22, 0.5);
+    }
+
+    .total-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #fcd9b6;
+      font-weight: 600;
+    }
+
+    .total-box i {
+      font-size: 2rem;
+      color: #fb923c;
+    }
+
+    .total-number {
+      background: #0a0e20;
+      padding: 5px 22px;
+      border-radius: 50px;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fb923c;
+      font-family: monospace;
+      letter-spacing: 2px;
+      border: 1px solid #f97316;
+    }
+
+    .legend {
+      display: flex;
+      gap: 18px;
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: #cbd5e1;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #2d3a5e;
+    }
+
+    .dot.active {
+      background: #10b981;
+      box-shadow: 0 0 8px #34d399;
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 1.5rem 0 0.8rem 0;
+      padding-bottom: 6px;
+      border-bottom: 2px solid rgba(251, 146, 60, 0.6);
+    }
+
+    .section-title i {
+      font-size: 1.5rem;
+      color: #fb923c;
+    }
+
+    .section-title h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fee3c0;
+    }
+
+    .badge {
+      background: #f97316;
+      padding: 3px 14px;
+      border-radius: 50px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #0a0a1a;
+      margin-left: 5px;
+    }
+
+    .btn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+      max-height: 55vh;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+
+    .btn-grid::-webkit-scrollbar {
+      width: 5px;
+    }
+    .btn-grid::-webkit-scrollbar-track {
+      background: #1e253e;
+      border-radius: 10px;
+    }
+    .btn-grid::-webkit-scrollbar-thumb {
+      background: #fb923c;
+      border-radius: 10px;
+    }
+
+    .offer-btn {
+      background: linear-gradient(105deg, #12162b, #0a0d1f);
+      border: 1px solid #3b3f66;
+      border-radius: 60px;
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      color: #e2e8f0;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .offer-btn:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(105deg, #1c2340, #12172e);
+      border-color: #fb923c;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.5);
+    }
+
+    .btn-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      overflow: hidden;
+    }
+    .btn-left i {
+      font-size: 1.2rem;
+      color: #fb923c;
+      min-width: 24px;
+      text-align: center;
+    }
+    .btn-left span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .click-count {
+      background: #00000055;
+      border-radius: 40px;
+      padding: 3px 12px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #fdba74;
+      border: 0.5px solid #fb923c;
+      font-family: monospace;
+    }
+    .offer-btn.clicked {
+      background: linear-gradient(105deg, #0f3b2a, #0a261c);
+      border-color: #10b981;
+    }
+    .offer-btn.clicked .click-count {
+      background: #064e3b;
+      color: #facc15;
+    }
+
+    .reset-btn {
+      background: rgba(249, 115, 22, 0.2);
+      border: 1px solid #f97316;
+      border-radius: 50px;
+      padding: 6px 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #fdba74;
+      cursor: pointer;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .reset-btn:hover {
+      background: #f9731630;
+      color: #ffffff;
+      border-color: #fb923c;
+    }
+
+    footer {
+      margin-top: 0.8rem;
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Mobile layout */
+    @media (max-width: 850px) {
+      body { padding: 1rem 0.8rem; }
+      .main-container { flex-direction: column; }
+      .level-sidebar { display: none; }
+      .mobile-tier-bar {
+        display: block;
+        background: rgba(12, 15, 28, 0.85);
+        backdrop-filter: blur(16px);
+        border-radius: 1.5rem;
+        padding: 1rem 0.5rem;
+        margin-bottom: 1.3rem;
+        border: 1px solid rgba(251, 146, 60, 0.55);
+      }
+      .mobile-tier-bar h3 {
+        color: #ffd6a5;
+        font-size: 1rem;
+        text-align: center;
+        margin-bottom: 0.7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .mobile-triggers {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+      }
+      .mobile-tier-btn {
+        background: linear-gradient(105deg, #181b30, #0e1124);
+        border: 1px solid #fb923c;
+        border-radius: 60px;
+        padding: 7px 2px;
+        font-weight: 700;
+        font-size: 0.65rem;
+        color: #ffdead;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+      }
+      .mobile-tier-btn i { font-size: 0.65rem; color: #fb923c; }
+      .mobile-tier-btn.active {
+        background: linear-gradient(105deg, #ea580c, #c2410c);
+        border-color: #fdba74;
+        color: white;
+      }
+      .btn-grid { max-height: 50vh; }
+      .stats-card { margin-top: 1rem; }
+    }
+    @media (min-width: 851px) {
+      .mobile-tier-bar { display: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="main-container">
+  <div class="content-area">
+    <div class="hero">
+      <h1><i class="fas fa-crown"></i> OFFER VAULT 40 <i class="fas fa-gem"></i></h1>
+    </div>
+
+    <!-- mobile triggers (10 buttons, 2 rows of 5) -->
+    <div class="mobile-tier-bar" id="mobileTierBar">
+      <h3><i class="fas fa-layer-group"></i> Choose Tier</h3>
+      <div class="mobile-triggers" id="mobileTriggers"></div>
+    </div>
+
+    <div class="section-title">
+      <i class="fas fa-layer-group"></i>
+      <h2 id="levelName">Tier 1 · Starter</h2>
+      <div class="badge" id="levelBadge">4 Offers</div>
+    </div>
+    <div id="offersGrid" class="btn-grid"></div>
+
+    <div class="stats-card">
+      <div class="total-box">
+        <i class="fas fa-chart-line"></i>
+        <span>Total Clicks</span>
+        <div class="total-number" id="totalClicks">0</div>
+      </div>
+      <div class="legend">
+        <span><i class="dot"></i> Pending</span>
+        <span><i class="dot active"></i> Clicked</span>
+      </div>
+    </div>
+
+    <footer>
+      <span><i class="far fa-clock"></i> 40 Live Deals · 10 Tiers · Click & Collect</span>
+      <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counters</div>
+    </footer>
+  </div>
+
+  <!-- desktop sidebar: 10 triggers (2 rows of 5) -->
+  <div class="level-sidebar">
+    <h3><i class="fas fa-layer-group"></i> Choose Tier</h3>
+    <div class="triggers-grid" id="desktopTriggers"></div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // ----- 40 LINKS (exactly from your second block, maintaining order) -----
+    const ALL_LINKS = [
+      "https://socialconventcontext.com/udvi4nwfg?key=563ac815112f3919fcd3f132d782a2dc",
+      "https://socialconventcontext.com/r8j95yx5d?key=34b2e7492308ae98d77042fed65db3fc",
+      "https://socialconventcontext.com/zcnqt7i707?key=6edd77cbbe7807daa78c242a9258a339",
+      "https://socialconventcontext.com/tkd9aud1i?key=ca674888f88ce53ea46ead9e21a509b7",
+      "https://socialconventcontext.com/x8hue9m6?key=e1d44baf789427ff8c64d9c5dfd5fa71",
+      "https://socialconventcontext.com/ddj7kuydym?key=cdc9403d346b4cd5e0c4a4467ab4a4a8",
+      "https://socialconventcontext.com/emy7w5yb?key=fee1ec52322b97b8d3858c4a4cf70ac0",
+      "https://socialconventcontext.com/k5t9z148?key=7c122115e5ee1b691718a4a5f41cfa1b",
+      "https://socialconventcontext.com/wpihc3znh4?key=7d6724c7855f70ee683fda80abff3229",
+      "https://socialconventcontext.com/be4v2673m?key=0544e7827fe96548b9cb540e7c0f6ba2",
+      "https://socialconventcontext.com/zgiicfmvt2?key=f661d15ec9f7a5646887fbe7b006c080",
+      "https://socialconventcontext.com/jrvgr2gsj7?key=25fd50841e0397721807361a603d8b57",
+      "https://socialconventcontext.com/tnejfvyu1?key=09ddacb88ddee03115703608bb2aff77",
+      "https://socialconventcontext.com/tnejfvyu1?key=09ddacb88ddee03115703608bb2aff77",
+      "https://socialconventcontext.com/pqu51hfj?key=e3d29eb9e013931e709b0659e1e92c2e",
+      "https://socialconventcontext.com/m0wz47ks?key=4d39483f21844dd2cd9be58765c60a25",
+      "https://socialconventcontext.com/m0wz47ks?key=4d39483f21844dd2cd9be58765c60a25",
+      "https://socialconventcontext.com/x4m24xceh?key=0e5d4e45dfbc04b2665095cd4711ed79",
+      "https://socialconventcontext.com/bpj626q4?key=7984572ce4d11f79f3ce7cb787d20f3c",
+      "https://socialconventcontext.com/bpj626q4?key=7984572ce4d11f79f3ce7cb787d20f3c",
+      "https://socialconventcontext.com/wif1te02y5?key=069f7c605de968b739cb14d5b0daa5f7",
+      "https://socialconventcontext.com/vb1ye054?key=b2b8ed8eeba60cbd3808756857e7cd10",
+      "https://socialconventcontext.com/bdxqq3di1w?key=e9642a15aee9304a401f73b405c4990a",
+      "https://socialconventcontext.com/c1bfv9kres?key=cfa2a7c6042ba162ca365e5da8f6ac58",
+      "https://socialconventcontext.com/nipzugpw?key=01b771cefaf02bf51393d0375971bd31",
+      "https://socialconventcontext.com/m8uh7upr4?key=f21fb3bb868014426d543332eff0e260",
+      "https://socialconventcontext.com/sdg9ee4cw?key=370454e7b6ce9f86adc1b236e1f346b8",
+      "https://socialconventcontext.com/g3gtefp23v?key=e957fb12dbab1a748c1cc681685a4a3d",
+      "https://socialconventcontext.com/hizwb3kum6?key=21f3ab8973d56caab82fbc4a65aeb33c",
+      "https://socialconventcontext.com/dw2z2fid?key=db8f0f8f8c7a1b1f6ec185f9f3fb45e0",
+      "https://socialconventcontext.com/ueqzvpfm8?key=c957469b2411c59601449dd030e0db9c",
+      "https://socialconventcontext.com/gjj8w61p?key=1f1b7c87e3341c743fc56212a0f86067",
+      "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708",
+      "https://socialconventcontext.com/qzsr5dudf6?key=2f0cef4977e0b09480bd5b7769960157",
+      "https://socialconventcontext.com/nbdew3qhqw?key=f8c3ff33cf224df228052d7d73f05580",
+      "https://socialconventcontext.com/js5jjdsg8?key=a1b712865611b7697ddbb74a70077beb",
+      "https://socialconventcontext.com/m0uivqg0?key=5248352277977696234894ea175fe3cb",
+      "https://socialconventcontext.com/pu8b6cved2?key=140031f124cd675b901afdb29b6f6a5a",
+      "https://socialconventcontext.com/xt3nvqebh?key=6c59f510d478e3afbdf0959bb26f0a4a",
+      "https://socialconventcontext.com/j33emhtg?key=1c8fcf2505132a33c34429fe9f71ee55"
+    ];
+
+    // Offer names & icons (matching your list, 40 entries)
+    const OFFER_DATA = [
+      { name: "LIGHTNING DEAL", icon: "bolt" },
+      { name: "ROCKET OFFER", icon: "rocket" },
+      { name: "MYSTERY BOX", icon: "gift" },
+      { name: "STAR PRIZE", icon: "star" },
+      { name: "FIRE SALE", icon: "fire" },
+      { name: "BEACH VIBE", icon: "umbrella-beach" },
+      { name: "WINNER PICK", icon: "trophy" },
+      { name: "CASH GRAB", icon: "wallet" },
+      { name: "GAMER LOOT", icon: "gamepad" },
+      { name: "FOODIE FEAST", icon: "pizza-slice" },
+      { name: "TRAVEL BONUS", icon: "plane" },
+      { name: "HOT DROP", icon: "fire-alt" },
+      { name: "MAGIC DEAL", icon: "magic" },
+      { name: "MAGIC DEAL 2", icon: "magic" },
+      { name: "GEM STRIKE", icon: "gem" },
+      { name: "DIAMOND PRO", icon: "diamond" },
+      { name: "DIAMOND PRO 2", icon: "diamond" },
+      { name: "SURPRISE BOX", icon: "gift" },
+      { name: "CROWN DEAL", icon: "crown" },
+      { name: "CROWN DEAL 2", icon: "crown" },
+      { name: "MAINSTREAM VIP", icon: "crown" },
+      { name: "COFFEE BREAK", icon: "coffee" },
+      { name: "SPEED CAR", icon: "car" },
+      { name: "BIKE RACE", icon: "motorcycle" },
+      { name: "DREAM HOME", icon: "home" },
+      { name: "LUXURY WATCH", icon: "clock" },
+      { name: "NEON DRIVE", icon: "car-side" },
+      { name: "GEM RUSH", icon: "gem" },
+      { name: "GOLD COINS", icon: "coins" },
+      { name: "BITCOIN DROP", icon: "bitcoin" },
+      { name: "HOUSE DEAL", icon: "home" },
+      { name: "COFFEE GOLD", icon: "mug-hot" },
+      { name: "MOCHA ROYAL", icon: "mug-hot" },
+      { name: "BMW PREMIUM", icon: "car" },
+      { name: "CAFE SPECIAL", icon: "mug-hot" },
+      { name: "PHONE PRO", icon: "mobile-alt" },
+      { name: "LAPTOP DEAL", icon: "laptop" },
+      { name: "AUDIO PRO", icon: "headphones" },
+      { name: "TV PREMIUM", icon: "tv" },
+      { name: "BONUS FINAL", icon: "gift" }
+    ];
+
+    const TOTAL_OFFERS = 40;
+    const OFFERS_PER_TIER = 4;   // 10 tiers * 4 = 40
+    const TOTAL_TIERS = 10;
+
+    // Build tier map: tier 1..10 each has 4 offers
+    const TIER_OFFERS = {};
+    for (let t = 1; t <= TOTAL_TIERS; t++) {
+      TIER_OFFERS[t] = [];
+      for (let j = 0; j < OFFERS_PER_TIER; j++) {
+        const globalIndex = (t - 1) * OFFERS_PER_TIER + j;
+        TIER_OFFERS[t].push({
+          name: OFFER_DATA[globalIndex].name,
+          icon: OFFER_DATA[globalIndex].icon,
+          link: ALL_LINKS[globalIndex]
+        });
+      }
+    }
+
+    // State
+    let clickCounts = new Array(TOTAL_OFFERS).fill(0);
+    const STORAGE_KEY = "vault40_tracker";
+    let currentTier = 1;
+
+    // DOM elements
+    const offersGrid = document.getElementById("offersGrid");
+    const levelNameEl = document.getElementById("levelName");
+    const levelBadgeEl = document.getElementById("levelBadge");
+    const totalClicksEl = document.getElementById("totalClicks");
+    const desktopTriggers = document.getElementById("desktopTriggers");
+    const mobileTriggers = document.getElementById("mobileTriggers");
+    const resetBtn = document.getElementById("resetAllBtn");
+
+    function getGlobalIndex(tier, localIdx) {
+      return (tier - 1) * OFFERS_PER_TIER + localIdx;
+    }
+
+    function loadCounts() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        try {
+          const arr = JSON.parse(saved);
+          if (Array.isArray(arr) && arr.length === TOTAL_OFFERS) {
+            clickCounts = arr;
+          }
+        } catch (e) {}
+      }
+    }
+
+    function saveCounts() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(clickCounts));
+    }
+
+    function updateTotalDisplay() {
+      const total = clickCounts.reduce((a, b) => a + b, 0);
+      totalClicksEl.innerText = total;
+    }
+
+    function renderCurrentTier() {
+      if (!offersGrid) return;
+      offersGrid.innerHTML = "";
+      const offers = TIER_OFFERS[currentTier];
+      levelNameEl.innerText = `Tier ${currentTier} · ${currentTier === 1 ? "Starter" : currentTier === 10 ? "Ultimate" : "Premium"}`;
+      levelBadgeEl.innerText = `${OFFERS_PER_TIER} Offers`;
+
+      offers.forEach((offer, localIdx) => {
+        const globalIdx = getGlobalIndex(currentTier, localIdx);
+        const count = clickCounts[globalIdx];
+        const isClicked = count > 0;
+
+        const btn = document.createElement("a");
+        btn.href = offer.link;
+        btn.target = "_blank";
+        btn.rel = "noopener noreferrer";
+        btn.className = "offer-btn" + (isClicked ? " clicked" : "");
+        btn.innerHTML = `
+          <div class="btn-left">
+            <i class="fas fa-${offer.icon}"></i>
+            <span>${offer.name}</span>
+          </div>
+          <div class="click-count">${count}</div>
+        `;
+
+        btn.addEventListener("click", (e) => {
+          // increment count
+          clickCounts[globalIdx] += 1;
+          saveCounts();
+          updateTotalDisplay();
+          renderCurrentTier();
+        });
+
+        offersGrid.appendChild(btn);
+      });
+    }
+
+    function setActiveTier(tier) {
+      if (tier < 1 || tier > TOTAL_TIERS) return;
+      currentTier = tier;
+
+      // Update desktop buttons
+      document.querySelectorAll(".level-btn").forEach(btn => {
+        const level = parseInt(btn.getAttribute("data-level"), 10);
+        if (level === tier) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+
+      // Update mobile buttons
+      document.querySelectorAll(".mobile-tier-btn").forEach(btn => {
+        const level = parseInt(btn.getAttribute("data-level"), 10);
+        if (level === tier) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+
+      renderCurrentTier();
+    }
+
+    function buildTriggers() {
+      if (desktopTriggers) desktopTriggers.innerHTML = "";
+      if (mobileTriggers) mobileTriggers.innerHTML = "";
+
+      for (let i = 1; i <= TOTAL_TIERS; i++) {
+        // Desktop trigger
+        if (desktopTriggers) {
+          const dBtn = document.createElement("div");
+          dBtn.className = "level-btn";
+          dBtn.setAttribute("data-level", i);
+          dBtn.innerHTML = `<i class="fas fa-tag"></i> ${i}`;
+          dBtn.addEventListener("click", () => setActiveTier(i));
+          desktopTriggers.appendChild(dBtn);
+        }
+
+        // Mobile trigger
+        if (mobileTriggers) {
+          const mBtn = document.createElement("div");
+          mBtn.className = "mobile-tier-btn";
+          mBtn.setAttribute("data-level", i);
+          mBtn.innerHTML = `<i class="fas fa-tag"></i> ${i}`;
+          mBtn.addEventListener("click", () => setActiveTier(i));
+          mobileTriggers.appendChild(mBtn);
+        }
+      }
+    }
+
+    function resetCounters() {
+      clickCounts = new Array(TOTAL_OFFERS).fill(0);
+      saveCounts();
+      updateTotalDisplay();
+      renderCurrentTier();
+    }
+
+    // Initialize everything
+    loadCounts();
+    buildTriggers();
+    setActiveTier(1);
+    updateTotalDisplay();
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", resetCounters);
+    }
+  })();
+</script>
+</body>
+</html>
