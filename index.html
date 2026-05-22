@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, shrink-to-fit=no, viewport-fit=cover">
-  <title>🔥 VAULT 40 | 10 Exclusive Tiers</title>
+  <title>🔥 VAULT 30 | 10 Exclusive Tiers</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;500;600;700;800&display=swap" rel="stylesheet">
@@ -39,7 +39,6 @@
       min-width: 280px;
     }
 
-    /* desktop sidebar (10 triggers in 2 rows of 5) */
     .level-sidebar {
       flex: 0.9;
       min-width: 210px;
@@ -349,7 +348,6 @@
       align-items: center;
     }
 
-    /* Mobile layout */
     @media (max-width: 850px) {
       body { padding: 1rem 0.8rem; }
       .main-container { flex-direction: column; }
@@ -411,10 +409,9 @@
 <div class="main-container">
   <div class="content-area">
     <div class="hero">
-      <h1><i class="fas fa-crown"></i> OFFER VAULT 40 <i class="fas fa-gem"></i></h1>
+      <h1><i class="fas fa-crown"></i> OFFER VAULT 30 <i class="fas fa-gem"></i></h1>
     </div>
 
-    <!-- mobile triggers (10 buttons, 2 rows of 5) -->
     <div class="mobile-tier-bar" id="mobileTierBar">
       <h3><i class="fas fa-layer-group"></i> Choose Tier</h3>
       <div class="mobile-triggers" id="mobileTriggers"></div>
@@ -423,7 +420,7 @@
     <div class="section-title">
       <i class="fas fa-layer-group"></i>
       <h2 id="levelName">Tier 1 · Starter</h2>
-      <div class="badge" id="levelBadge">4 Offers</div>
+      <div class="badge" id="levelBadge">3 Offers</div>
     </div>
     <div id="offersGrid" class="btn-grid"></div>
 
@@ -440,12 +437,11 @@
     </div>
 
     <footer>
-      <span><i class="far fa-clock"></i> 40 Live Deals · 10 Tiers · Click & Collect</span>
+      <span><i class="far fa-clock"></i> 30 Live Deals · 10 Tiers · 3 per Tier</span>
       <div class="reset-btn" id="resetAllBtn"><i class="fas fa-trash-alt"></i> Reset Counters</div>
     </footer>
   </div>
 
-  <!-- desktop sidebar: 10 triggers (2 rows of 5) -->
   <div class="level-sidebar">
     <h3><i class="fas fa-layer-group"></i> Choose Tier</h3>
     <div class="triggers-grid" id="desktopTriggers"></div>
@@ -454,7 +450,7 @@
 
 <script>
   (function() {
-    // ----- 40 LINKS (exactly from your second block, maintaining order) -----
+    // 30 LINKS (first 30 from your 40 links, organized as 10 tiers × 3 each)
     const ALL_LINKS = [
       "https://socialconventcontext.com/udvi4nwfg?key=563ac815112f3919fcd3f132d782a2dc",
       "https://socialconventcontext.com/r8j95yx5d?key=34b2e7492308ae98d77042fed65db3fc",
@@ -485,20 +481,9 @@
       "https://socialconventcontext.com/sdg9ee4cw?key=370454e7b6ce9f86adc1b236e1f346b8",
       "https://socialconventcontext.com/g3gtefp23v?key=e957fb12dbab1a748c1cc681685a4a3d",
       "https://socialconventcontext.com/hizwb3kum6?key=21f3ab8973d56caab82fbc4a65aeb33c",
-      "https://socialconventcontext.com/dw2z2fid?key=db8f0f8f8c7a1b1f6ec185f9f3fb45e0",
-      "https://socialconventcontext.com/ueqzvpfm8?key=c957469b2411c59601449dd030e0db9c",
-      "https://socialconventcontext.com/gjj8w61p?key=1f1b7c87e3341c743fc56212a0f86067",
-      "https://socialconventcontext.com/s5dka172?key=e8c9cdc77edf79ce2912ccc85528f708",
-      "https://socialconventcontext.com/qzsr5dudf6?key=2f0cef4977e0b09480bd5b7769960157",
-      "https://socialconventcontext.com/nbdew3qhqw?key=f8c3ff33cf224df228052d7d73f05580",
-      "https://socialconventcontext.com/js5jjdsg8?key=a1b712865611b7697ddbb74a70077beb",
-      "https://socialconventcontext.com/m0uivqg0?key=5248352277977696234894ea175fe3cb",
-      "https://socialconventcontext.com/pu8b6cved2?key=140031f124cd675b901afdb29b6f6a5a",
-      "https://socialconventcontext.com/xt3nvqebh?key=6c59f510d478e3afbdf0959bb26f0a4a",
-      "https://socialconventcontext.com/j33emhtg?key=1c8fcf2505132a33c34429fe9f71ee55"
+      "https://socialconventcontext.com/dw2z2fid?key=db8f0f8f8c7a1b1f6ec185f9f3fb45e0"
     ];
 
-    // Offer names & icons (matching your list, 40 entries)
     const OFFER_DATA = [
       { name: "LIGHTNING DEAL", icon: "bolt" },
       { name: "ROCKET OFFER", icon: "rocket" },
@@ -529,24 +514,13 @@
       { name: "NEON DRIVE", icon: "car-side" },
       { name: "GEM RUSH", icon: "gem" },
       { name: "GOLD COINS", icon: "coins" },
-      { name: "BITCOIN DROP", icon: "bitcoin" },
-      { name: "HOUSE DEAL", icon: "home" },
-      { name: "COFFEE GOLD", icon: "mug-hot" },
-      { name: "MOCHA ROYAL", icon: "mug-hot" },
-      { name: "BMW PREMIUM", icon: "car" },
-      { name: "CAFE SPECIAL", icon: "mug-hot" },
-      { name: "PHONE PRO", icon: "mobile-alt" },
-      { name: "LAPTOP DEAL", icon: "laptop" },
-      { name: "AUDIO PRO", icon: "headphones" },
-      { name: "TV PREMIUM", icon: "tv" },
-      { name: "BONUS FINAL", icon: "gift" }
+      { name: "BITCOIN DROP", icon: "bitcoin" }
     ];
 
-    const TOTAL_OFFERS = 40;
-    const OFFERS_PER_TIER = 4;   // 10 tiers * 4 = 40
+    const TOTAL_OFFERS = 30;
+    const OFFERS_PER_TIER = 3;
     const TOTAL_TIERS = 10;
 
-    // Build tier map: tier 1..10 each has 4 offers
     const TIER_OFFERS = {};
     for (let t = 1; t <= TOTAL_TIERS; t++) {
       TIER_OFFERS[t] = [];
@@ -560,12 +534,10 @@
       }
     }
 
-    // State
     let clickCounts = new Array(TOTAL_OFFERS).fill(0);
-    const STORAGE_KEY = "vault40_tracker";
+    const STORAGE_KEY = "vault30_tracker";
     let currentTier = 1;
 
-    // DOM elements
     const offersGrid = document.getElementById("offersGrid");
     const levelNameEl = document.getElementById("levelName");
     const levelBadgeEl = document.getElementById("levelBadge");
@@ -625,7 +597,6 @@
         `;
 
         btn.addEventListener("click", (e) => {
-          // increment count
           clickCounts[globalIdx] += 1;
           saveCounts();
           updateTotalDisplay();
@@ -640,14 +611,12 @@
       if (tier < 1 || tier > TOTAL_TIERS) return;
       currentTier = tier;
 
-      // Update desktop buttons
       document.querySelectorAll(".level-btn").forEach(btn => {
         const level = parseInt(btn.getAttribute("data-level"), 10);
         if (level === tier) btn.classList.add("active");
         else btn.classList.remove("active");
       });
 
-      // Update mobile buttons
       document.querySelectorAll(".mobile-tier-btn").forEach(btn => {
         const level = parseInt(btn.getAttribute("data-level"), 10);
         if (level === tier) btn.classList.add("active");
@@ -662,7 +631,6 @@
       if (mobileTriggers) mobileTriggers.innerHTML = "";
 
       for (let i = 1; i <= TOTAL_TIERS; i++) {
-        // Desktop trigger
         if (desktopTriggers) {
           const dBtn = document.createElement("div");
           dBtn.className = "level-btn";
@@ -672,7 +640,6 @@
           desktopTriggers.appendChild(dBtn);
         }
 
-        // Mobile trigger
         if (mobileTriggers) {
           const mBtn = document.createElement("div");
           mBtn.className = "mobile-tier-btn";
@@ -691,7 +658,6 @@
       renderCurrentTier();
     }
 
-    // Initialize everything
     loadCounts();
     buildTriggers();
     setActiveTier(1);
